@@ -12,12 +12,12 @@ package Classes;
 public abstract class Perfil {
     
     
-    private int id;
-    private String nome;
-    private String cpf;
-    private char sexo;
-    private int idade;
-    private String email;
+    protected int id;
+    protected String nome;
+    protected String cpf;
+    protected char sexo;
+    protected int idade;
+    protected String email;
 
     public Perfil(int id, String nome, String cpf, char sexo, int idade, String email) {
         this.id = id;
