@@ -4,6 +4,7 @@
  */
 package Telas;
 
+import Classes.Agenda;
 import Classes.Consulta;
 import Classes.Paciente;
 import Classes.Perfil;
@@ -15,11 +16,18 @@ import Classes.Usuario;
  */
 public class Teste {
     public static void main(String[] args) {
-        Perfil pessoa = new Usuario(12, "Paulo", "121131", 'M', 54, "HASDF", "sfjsdf", "chefe" );
-        Perfil pessoa2 = new Paciente(23, "Sergio", "1234131", 'F', 54, "HASDfsdF","36604000", "rua 1" );
+        Usuario usuario = new Usuario(12, "Paulo", "121131", 'M', 54, "HASDF", "sfjsdf", "chefe" );
+        Paciente paciente = new Paciente(23, "Sergio", "1234131", 'F', 54, "HASDfsdF","36604000", "rua 1" );
         
-        System.out.println(pessoa.toString());
-        System.out.println(pessoa2.toString());
+        Consulta consulta = new Consulta(1, "dentista");
+        
+        System.out.println(usuario.toString());
+        System.out.println(paciente.toString());
+        
+        Agenda agenda = new Agenda(1, "12/11/2023 11:30", paciente , consulta);
+        
+        System.out.println(agenda);
+        
     }
     
     
