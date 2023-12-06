@@ -31,7 +31,7 @@ public class Banco {
         
         //criando elementos
         
-        Usuario usuario1 = new Usuario(1, "Marcos", "123.456.789-10", 'M', 36, "marcelo@gmail.com", "senha", "Dentista");
+        Usuario usuario1 = new Usuario(1, "Gleiph", "123.456.789-10", 'M', 36, "Gleiph@gmail.com", "senha", "Dentista");
         Usuario usuario2 = new Usuario(2, "Lúcia", "165.786.909-50", 'F', 22, "lucia@gmail.com", "senha", "Secretária");
          
         Paciente paciente1 = new Paciente(1, "Leo", "335.676.769-58", 'M', 16, "leo@gmail.com", "51420-487", "Rua Patos, 32");
@@ -50,7 +50,7 @@ public class Banco {
 
         Agenda Agenda1 = new Agenda(1,"22/12/2023 14:30", paciente4, consulta1);
         Agenda Agenda2 = new Agenda(2,"18/12/2023 09:30", paciente3, consulta4);
-        Agenda Agenda3 = new Agenda(3,"14/12/2023 07:30", paciente4, consulta1);
+        Agenda Agenda3 = new Agenda(3,"14/12/2023 07:30", paciente1, consulta3);
         
         //Adiciona Elementos na lista
         usuario.add(usuario1);

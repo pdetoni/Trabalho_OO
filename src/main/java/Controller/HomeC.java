@@ -24,6 +24,5 @@ public class HomeC {
         
         registros.setVisible(true);
         
-        this.view.dispose();
     }
 }

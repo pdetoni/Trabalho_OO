@@ -47,7 +47,8 @@ public class Agenda {
     public Date getData() {
         return data;
     }
-
+    
+    
     public void setData(Date data) {
         this.data = data;
     }
@@ -73,6 +74,14 @@ public class Agenda {
         return "Agenda{" + "id=" + id + ", data=" + data + ", paciente=" + paciente.getNome() + ", consulta=" + consulta.toString() + '}';
     }
     
+    public String dataForm(){
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    }
+    
+    public String horaForm(){
+        return new SimpleDateFormat("HH:mm").format(data);
+    }
+
     
     
     

@@ -4,17 +4,24 @@
  */
 package Telas;
 
+import Controller.RegistrosC;
+import javax.swing.JTable;
+
 /**
  *
  * @author pdper
  */
 public class Registros extends javax.swing.JFrame {
 
+    private final RegistrosC controller;
+
     /**
      * Creates new form Registros
      */
     public Registros() {
         initComponents();
+        controller = new RegistrosC(this);
+        iniciar();
     }
 
     /**
@@ -41,7 +48,7 @@ public class Registros extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registros");
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
@@ -90,10 +97,7 @@ public class Registros extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Leonardo", "Odontologia", "18/09/2023", "09:00"},
-                {"2", "Felipe", "Ortopedia", "21/12/2023", "12:00"},
-                {"3", "Pedro", "Oftalmologia", "31/08/2024", "15:00"},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID:", "Cliente", "Consulta:", "Data:", "Hora"
@@ -235,4 +239,18 @@ public class Registros extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar() {
+        this.controller.atualizaTabela();
+       }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+    
+    
 }
