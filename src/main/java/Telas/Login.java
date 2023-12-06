@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Telas;
+import Classes.DAO.Banco;
 import Controller.LoginC;
 import javax.swing.*;
 
@@ -20,6 +21,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         controller = new LoginC(this);
+        Banco.inicia();
     }
 
     /**
@@ -127,7 +129,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.controller.acao();
+        this.controller.entrar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

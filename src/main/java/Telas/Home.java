@@ -4,17 +4,22 @@
  */
 package Telas;
 
+import Controller.HomeC;
+
 /**
  *
  * @author pdper
  */
 public class Home extends javax.swing.JFrame {
 
+    private final HomeC controller;
+
     /**
      * Creates new form Home
      */
     public Home() {
         initComponents();
+        this.controller = new HomeC(this);
     }
 
     /**
@@ -32,6 +37,7 @@ public class Home extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         mEditar = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
@@ -57,7 +63,7 @@ public class Home extends javax.swing.JFrame {
         jMenuItem1.setText("Paciente");
         mCadastro.add(jMenuItem1);
 
-        jMenuItem2.setText("Serviço");
+        jMenuItem2.setText("Consulta");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -68,6 +74,15 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1.add(mCadastro);
 
         mEditar.setText("Editar");
+
+        jMenuItem3.setText("Agenda");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        mEditar.add(jMenuItem3);
+
         jMenuBar1.add(mEditar);
 
         setJMenuBar(jMenuBar1);
@@ -78,6 +93,11 @@ public class Home extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        this.controller.irPRegistros();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,6 +138,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu mCadastro;
     private javax.swing.JMenu mEditar;

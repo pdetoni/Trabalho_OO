@@ -31,6 +31,11 @@ public class Agenda {
         this.consulta = consulta;
     }
 
+    public Agenda() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }
