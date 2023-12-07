@@ -11,7 +11,7 @@ import Telas.Login;
  *
  * @author pdper
  */
-public class LoginH {
+public class LoginH implements IHelper{
     
     private final Login view;
 
@@ -40,6 +40,20 @@ public class LoginH {
     public void limpar(){
         view.getUser().setText("");
         view.getSenha().setText("");
+    }
+
+    @Override
+    public Usuario obterModelo() {
+        String nome = view.getUser().getText();
+        String senha = view.getSenha().getText();
+        Usuario user = new Usuario(0, nome, senha);
+        
+        return user;
+    }
+
+    @Override
+    public void limpa() {
+        
     }
     
     

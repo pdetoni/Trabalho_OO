@@ -39,7 +39,7 @@ public class Paciente extends Perfil {
     
     @Override
     public String toString() {
-        return super.toString() + ", CEP:"+ cep + ", Endereço:"+ endereco +'}';
+        return getNome();
     }
     
 }

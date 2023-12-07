@@ -5,7 +5,11 @@
 package Controller;
 
 import Classes.Agenda;
+import Classes.Consulta;
 import Classes.DAO.AgendaDAO;
+import Classes.DAO.ConsultaDAO;
+import Classes.DAO.PacienteDAO;
+import Classes.Paciente;
 import Controller.Helper.RegistrosH;
 import Telas.Registros;
 import java.util.ArrayList;
@@ -23,6 +27,22 @@ public class RegistrosC {
         this.helper = new RegistrosH(view);
     }
     
+    public void attPaciente(){
+        PacienteDAO paciente = new PacienteDAO();
+        
+        ArrayList<Paciente> pacientes = paciente.selectAll();
+        
+        helper.preencherPac(pacientes);
+    }
+    
+    public void attConsulta(){
+       ConsultaDAO consulta = new ConsultaDAO();
+       
+       ArrayList<Consulta> consultas = consulta.selectAll();
+       
+       helper.preencherCons(consultas);
+    }
+    
     public void atualizaTabela(){
         AgendaDAO ag = new AgendaDAO();
         
@@ -30,4 +50,16 @@ public class RegistrosC {
         
         helper.preenche(registros);
     }
+    
+    public void registrar(){
+        Agenda agenda = helper.obterModelo();
+        
+        new AgendaDAO().insert(agenda);
+        
+        atualizaTabela();
+        
+        helper.limpa();
+    }
+    
+    
 }
