@@ -21,8 +21,7 @@ public class AgendaDAO {
         
         
     }
-    
-   
+
     public boolean update(Agenda Agenda){
         
         for (int i = 0; i < Banco.Agenda.size(); i++) {
@@ -35,7 +34,6 @@ public class AgendaDAO {
 
     }
     
-    
     public boolean delete(Agenda Agenda){
         for (Agenda AgendaLista : Banco.Agenda) {
             if(idSaoIguais(AgendaLista,Agenda)){
@@ -45,13 +43,11 @@ public class AgendaDAO {
         }
         return false;
     }
-    
  
     public ArrayList<Agenda> selectAll(){
         return Banco.Agenda;
     }
-    
-    
+
     private boolean idSaoIguais(Agenda agenda, Agenda agendaC) {
         return agenda.getId() ==  agendaC.getId();
     }

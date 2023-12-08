@@ -6,6 +6,7 @@ package Controller.Helper;
 
 import Classes.Agenda;
 import Classes.Consulta;
+import Classes.Exception.AgendaException;
 import Classes.Paciente;
 import Telas.Registros;
 import java.util.ArrayList;
@@ -66,9 +67,14 @@ public class RegistrosH implements IHelper {
         String hora = view.getHora().getText();
         
         String dh = data + " " + hora;
-        
-        Agenda agenda = new Agenda(id, dh, paciente, consulta);
-        
+
+        Agenda agenda = null;
+        try {
+            agenda = new Agenda(id, dh, paciente, consulta);
+        } catch (AgendaException ex) {
+            System.out.println(ex.getMessage());
+        }
+
         return agenda;
     }
 

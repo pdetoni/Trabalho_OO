@@ -5,6 +5,7 @@
 package Classes.DAO;
 
 import Classes.Agenda;
+import Classes.Exception.AgendaException;
 import Classes.Paciente;
 import Classes.Consulta;
 import Classes.Usuario;
@@ -30,7 +31,6 @@ public class Banco {
         Agenda = new ArrayList<Agenda>();
         
         //criando elementos
-        
         Usuario usuario1 = new Usuario(1, "Gleiph", "123.456.789-10", 'M', 36, "Gleiph@gmail.com", "senha", "Dentista");
         Usuario usuario2 = new Usuario(2, "Lúcia", "165.786.909-50", 'F', 22, "lucia@gmail.com", "senha", "Secretária");
          
@@ -39,8 +39,6 @@ public class Banco {
         Paciente paciente3 = new Paciente(3, "Felipe", "142.539.089-56", 'M', 30, "felipe@gmail.com", "49420-932", "Rua Joana, 17");
         Paciente paciente4 = new Paciente(4, "Vanda", "461.892.652-99", 'F', 32, "vanda@gmail.com", "78990-787", "Rua Lambari, 12");
         
-       
-        
         Consulta consulta1 = new Consulta(1, "Dentista");
         Consulta consulta2 = new Consulta(2, "Oftalmologista");
         Consulta consulta3 = new Consulta(3, "Ortopedista");
@@ -48,10 +46,19 @@ public class Banco {
         Consulta consulta5 = new Consulta(5, "Cardiologista");
         Consulta consulta6 = new Consulta(6, "Dematologista");
 
-        Agenda Agenda1 = new Agenda(1,"22/12/2023 14:30", paciente4, consulta1);
-        Agenda Agenda2 = new Agenda(2,"18/12/2023 09:30", paciente3, consulta4);
-        Agenda Agenda3 = new Agenda(3,"14/12/2023 07:30", paciente1, consulta3);
-        
+
+        //Refatoração da criação do objeto Agenda pós uso da classe AgendaException
+        Agenda Agenda1 = null;
+        Agenda Agenda2 = null;
+        Agenda Agenda3 = null;
+        try {
+            Agenda1 = new Agenda(1,"22/12/2023 14:30", paciente4, consulta1);
+            Agenda2 = new Agenda(2,"18/12/2023 09:30", paciente3, consulta4);
+            Agenda3 = new Agenda(3,"14/12/2023 07:30", paciente1, consulta3);
+        } catch (AgendaException e) {
+            System.out.println(e.getMessage());
+        }
+
         //Adiciona Elementos na lista
         usuario.add(usuario1);
         usuario.add(usuario2);

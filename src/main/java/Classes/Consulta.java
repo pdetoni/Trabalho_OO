@@ -25,8 +25,6 @@ public class Consulta {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
 
     public String getTipo() {
         return tipo;

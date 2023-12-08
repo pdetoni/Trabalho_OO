@@ -9,15 +9,15 @@ package Classes;
  * @author pdper
  */
 public class Paciente extends Perfil {
-    
+
+    private String cep;
+    private String endereco;
+
     public Paciente(int id, String nome, String cpf, char sexo, int idade, String email, String cep, String endereco) {
         super(id, nome, cpf, sexo, idade, email);
         this.cep = cep;
         this.endereco = endereco;
     }
-    
-    private String cep;
-    private String endereco;
 
     public String getEndereco() {
         return endereco;
@@ -26,8 +26,6 @@ public class Paciente extends Perfil {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    
-    
 
     public String getCep() {
         return cep;

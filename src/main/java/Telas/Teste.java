@@ -6,6 +6,7 @@ package Telas;
 
 import Classes.Agenda;
 import Classes.Consulta;
+import Classes.Exception.AgendaException;
 import Classes.Paciente;
 import Classes.Usuario;
 
@@ -22,9 +23,14 @@ public class Teste {
         
         System.out.println(usuario.toString());
         System.out.println(paciente.toString());
-        
-        Agenda agenda = new Agenda(1, "12/11/2023 11:30", paciente , consulta);
-        
+
+        Agenda agenda = null;
+        try {
+            agenda = new Agenda(1, "12/11/2023 11:30", paciente , consulta);
+        } catch (AgendaException e) {
+            throw new RuntimeException(e);
+        }
+
         System.out.println(agenda);
         
     }
