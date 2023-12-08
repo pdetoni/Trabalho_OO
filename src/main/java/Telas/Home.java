@@ -35,12 +35,17 @@ public class Home extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         mEditar = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        mVisualizar = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(20, 44, 142));
+        jPanel2.setToolTipText("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -55,7 +60,7 @@ public class Home extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
-        jMenuBar1.setBackground(new java.awt.Color(20, 44, 142));
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setForeground(new java.awt.Color(20, 44, 142));
 
         mCadastro.setText("Cadastrar");
@@ -85,6 +90,29 @@ public class Home extends javax.swing.JFrame {
 
         jMenuBar1.add(mEditar);
 
+        mVisualizar.setText("Visualizar");
+
+        jMenuItem4.setText("Usuários");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisualizarUsuarios visualizarUsuarios = new VisualizarUsuarios();
+                visualizarUsuarios.setVisible(true);
+            }
+        });
+
+        mVisualizar.add(jMenuItem4);
+
+        jMenuItem5.setText("Pacientes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisualizarPacientes visualizarPacientes = new VisualizarPacientes();
+                visualizarPacientes.setVisible(true);
+            }
+        });
+        mVisualizar.add(jMenuItem5);
+
+        jMenuBar1.add(mVisualizar);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -98,6 +126,10 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.controller.irPRegistros();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,8 +171,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu mCadastro;
     private javax.swing.JMenu mEditar;
+    private javax.swing.JMenu mVisualizar;
     // End of variables declaration//GEN-END:variables
 }
