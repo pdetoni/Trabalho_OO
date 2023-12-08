@@ -12,6 +12,11 @@ import java.util.ArrayList;
  * @author pdper
  */
 public class PacienteDAO {
+
+    //Construtor que inicia banco para garantir que retorno não seja nulo
+    public PacienteDAO() {
+        Banco.inicia();
+    }
     
     public void insert(Paciente paciente){
         Banco.Paciente.add(paciente);
@@ -40,8 +45,8 @@ public class PacienteDAO {
         }
         return false;
     }
-    
-    
+
+
     public ArrayList<Paciente> selectAll(){
         return Banco.Paciente;
     }

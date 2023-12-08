@@ -13,6 +13,11 @@ import java.util.ArrayList;
  */
 
 public class UsuarioDAO {
+
+    //Construtor que inicia banco para garantir que retorno não seja nulo
+    public UsuarioDAO() {
+        Banco.inicia();
+    }
     public void insert(Usuario usuario){
         Banco.usuario.add(usuario);
     }

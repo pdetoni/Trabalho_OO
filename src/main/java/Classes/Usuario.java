@@ -50,9 +50,6 @@ public class Usuario extends Perfil {
     public String toString() {
         return super.toString() + ", senha=" + senha + ", cargo=" + cargo + '}';
     }
-    
-    
-    
-    
+
     
 }
