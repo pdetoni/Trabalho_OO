@@ -5,6 +5,7 @@
 package Classes.DAO;
 
 import Classes.Agenda;
+import Classes.Data.Persistencia;
 import Classes.Exception.AgendaException;
 import Classes.Paciente;
 import Classes.Consulta;
@@ -31,8 +32,10 @@ public class Banco {
         Agenda = new ArrayList<Agenda>();
         
         //criando elementos
-        Usuario usuario1 = new Usuario(1, "Gleiph", "123.456.789-10", 'M', 36, "Gleiph@gmail.com", "senha", "Dentista");
-        Usuario usuario2 = new Usuario(2, "Lúcia", "165.786.909-50", 'F', 22, "lucia@gmail.com", "senha", "Secretária");
+//        Usuario usuario1 = new Usuario(1, "Gleiph", "123.456.789-10", 'M', 36, "Gleiph@gmail.com", "senha", "Dentista");
+//        Usuario usuario2 = new Usuario(2, "Lúcia", "165.786.909-50", 'F', 22, "lucia@gmail.com", "senha", "Secretária");
+        Persistencia persistencia = new Persistencia();
+        usuario = persistencia.lerArquivo("src/main/java/Classes/Data/usuarios.txt");
          
         Paciente paciente1 = new Paciente(1, "Leo", "335.676.769-58", 'M', 16, "leo@gmail.com", "51420-487", "Rua Patos, 32");
         Paciente paciente2 = new Paciente(2, "Marta", "763.876.087-88", 'F', 22, "marta@gmail.com", "13430-490", "Rua Garças, 45");
@@ -60,8 +63,8 @@ public class Banco {
         }
 
         //Adiciona Elementos na lista
-        usuario.add(usuario1);
-        usuario.add(usuario2);
+//        usuario.add(usuario1);
+//        usuario.add(usuario2);
         
         Paciente.add(paciente1);
         Paciente.add(paciente2);
