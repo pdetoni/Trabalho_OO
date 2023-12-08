@@ -14,9 +14,6 @@ public class Home extends javax.swing.JFrame {
 
     private final HomeC controller;
 
-    /**
-     * Creates new form Home
-     */
     public Home() {
         initComponents();
         this.controller = new HomeC(this);
@@ -43,7 +40,7 @@ public class Home extends javax.swing.JFrame {
         setTitle("Home");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -53,10 +50,13 @@ public class Home extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
+
+        jMenuBar1.setBackground(new java.awt.Color(20, 44, 142));
+        jMenuBar1.setForeground(new java.awt.Color(20, 44, 142));
 
         mCadastro.setText("Cadastrar");
 
