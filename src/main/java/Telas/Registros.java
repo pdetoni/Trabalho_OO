@@ -19,6 +19,7 @@ public class Registros extends javax.swing.JFrame {
 
     public Registros() {
         initComponents();
+        this.setLocationRelativeTo(null);
         controller = new RegistrosC(this);
         iniciar();
     }

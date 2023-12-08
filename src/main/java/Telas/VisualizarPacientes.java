@@ -10,6 +10,7 @@ public class VisualizarPacientes extends javax.swing.JFrame {
 
     public VisualizarPacientes() {
         initComponents();
+        this.setLocationRelativeTo(null);
         pacienteDAO = new PacienteDAO();
         loadClientTable();
     }

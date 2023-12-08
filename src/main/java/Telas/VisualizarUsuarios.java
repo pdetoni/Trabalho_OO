@@ -10,6 +10,7 @@ public class VisualizarUsuarios extends javax.swing.JFrame {
 
     public VisualizarUsuarios() {
         initComponents();
+        this.setLocationRelativeTo(null);
         usuarioDAO = new UsuarioDAO();
         loadUserTable();
     }
