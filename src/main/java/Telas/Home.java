@@ -93,20 +93,26 @@ public class Home extends javax.swing.JFrame {
         mVisualizar.setText("Visualizar");
 
         jMenuItem4.setText("Usuários");
+
+        //action listener de visualizar usuarios
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VisualizarUsuarios visualizarUsuarios = new VisualizarUsuarios();
                 visualizarUsuarios.setVisible(true);
+                dispose();
             }
         });
 
         mVisualizar.add(jMenuItem4);
 
         jMenuItem5.setText("Pacientes");
+
+        //action listener de visualizar pacientes
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VisualizarPacientes visualizarPacientes = new VisualizarPacientes();
                 visualizarPacientes.setVisible(true);
+                dispose();
             }
         });
         mVisualizar.add(jMenuItem5);
