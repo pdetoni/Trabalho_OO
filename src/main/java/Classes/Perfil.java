@@ -6,12 +6,9 @@ package Classes;
 
 
 /**
- *
  * @author pdper
  */
 public abstract class Perfil {
-    
-    
     protected int id;
     protected String nome;
     protected String cpf;
@@ -32,10 +29,7 @@ public abstract class Perfil {
         this.id = id;
         this.nome = nome;
     }
-    
-    
-    
-    
+
 
     public int getId() {
         return id;
@@ -89,10 +83,6 @@ public abstract class Perfil {
     public String toString() {
         return "Perfil{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", sexo=" + sexo + ", idade=" + idade + ", email=" + email;
     }
-    
-    
-    
-    
-    
- 
+
+
 }

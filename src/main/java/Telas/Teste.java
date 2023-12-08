@@ -7,7 +7,6 @@ package Telas;
 import Classes.Agenda;
 import Classes.Consulta;
 import Classes.Paciente;
-import Classes.Perfil;
 import Classes.Usuario;
 
 /**

@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author pdper
  */
 public class Agenda {
@@ -20,12 +19,12 @@ public class Agenda {
     private Paciente paciente;
     private Consulta consulta;
 
-    public Agenda(int id, String data, Paciente paciente, Consulta consulta) {
+    public Agenda(int id, String data, Paciente paciente, Consulta consulta) throws AgendaException {
         this.id = id;
         try {
             this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         } catch (ParseException ex) {
-            Logger.getLogger(Agenda.class.getName()).log(Level.SEVERE, null, ex);
+            throw new AgendaException("Data informada está no formato inválido. O formato correto é dd/MM/yyyy HH:mm");
         }
         this.paciente = paciente;
         this.consulta = consulta;
@@ -33,8 +32,7 @@ public class Agenda {
 
     public Agenda() {
     }
-    
-    
+
 
     public int getId() {
         return id;
@@ -47,8 +45,8 @@ public class Agenda {
     public Date getData() {
         return data;
     }
-    
-    
+
+
     public void setData(Date data) {
         this.data = data;
     }
@@ -73,16 +71,13 @@ public class Agenda {
     public String toString() {
         return "Agenda{" + "id=" + id + ", data=" + data + ", paciente=" + paciente.getNome() + ", consulta=" + consulta.toString() + '}';
     }
-    
-    public String dataForm(){
+
+    public String dataForm() {
         return new SimpleDateFormat("dd/MM/yyyy").format(data);
     }
-    
-    public String horaForm(){
+
+    public String horaForm() {
         return new SimpleDateFormat("HH:mm").format(data);
     }
 
-    
-    
-    
 }

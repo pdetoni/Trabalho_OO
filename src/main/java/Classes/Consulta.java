@@ -40,9 +40,5 @@ public class Consulta {
     public String toString() {
         return getTipo();
     }
-    
-    
-    
-    
-    
+
 }
