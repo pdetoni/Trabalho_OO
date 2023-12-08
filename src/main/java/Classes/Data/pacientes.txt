@@ -1,0 +1,4 @@
+1;Leo;335.676.769-58;M;16;leo@gmail.com;51420-487;Rua Patos, 32
+2;Marta;763.876.087-88;F;22;marta@gmail.com;13430-490;Rua Garças, 45
+3;Felipe;142.539.089-56;M;30;felipe@gmail.com;49420-932;Rua Joana, 17
+4;Vanda;461.892.652-99;F;32;vanda@gmail.com;78990-787;Rua Lambari, 12
