@@ -18,6 +18,7 @@ public class VisualizarPacientes extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         clientTable = new javax.swing.JTable();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,6 +30,13 @@ public class VisualizarPacientes extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(clientTable);
 
+        backButton.setText("Voltar");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -37,16 +45,27 @@ public class VisualizarPacientes extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                                 .addContainerGap())
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(backButton)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(backButton)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+    }
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        this.dispose();
+        new Home().setVisible(true);
     }
 
     private void loadClientTable() {
@@ -67,4 +86,5 @@ public class VisualizarPacientes extends javax.swing.JFrame {
 
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable clientTable;
+    private javax.swing.JButton backButton;
 }
