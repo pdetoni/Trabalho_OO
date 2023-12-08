@@ -54,9 +54,9 @@ public class RegistrosH implements IHelper {
     
     @Override
     public Agenda obterModelo() {
-        String idS = view.getId().getText();
+        //String idS = view.getId().getText();
         
-        int id = Integer.parseInt(idS);
+        //int id = Integer.parseInt(idS);
         
         Paciente paciente = retornaPaciente();
         
@@ -70,7 +70,7 @@ public class RegistrosH implements IHelper {
 
         Agenda agenda = null;
         try {
-            agenda = new Agenda(id, dh, paciente, consulta);
+            agenda = new Agenda(0, dh, paciente, consulta);
         } catch (AgendaException ex) {
             System.out.println(ex.getMessage());
         }
@@ -81,7 +81,7 @@ public class RegistrosH implements IHelper {
    
     @Override
     public void limpa() {
-        view.getId().setText("");
+        //view.getId().setText("");
         view.getData().setText("");
         view.getHora().setText("");
         

@@ -21,6 +21,7 @@ public class Usuario extends Perfil {
         super(id, nome);
         this.senha = senha;
     }
+    
 
     public String getSenha() {
         return senha;

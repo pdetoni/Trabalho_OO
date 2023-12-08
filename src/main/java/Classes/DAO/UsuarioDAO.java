@@ -19,7 +19,11 @@ public class UsuarioDAO {
         Banco.inicia();
     }
     public void insert(Usuario usuario){
-        Banco.usuario.add(usuario);
+        //Banco.usuario.add(usuario);
+        if(usuario.getId() == 0){
+            usuario.setId(proximoId());
+            Banco.usuario.add(usuario);
+        }
     }
     
     
@@ -69,5 +73,21 @@ public class UsuarioDAO {
     
     private boolean idSaoIguais(Usuario usuario, Usuario usuarioAComparar) {
         return usuario.getId() ==  usuarioAComparar.getId();
+    }
+    
+    private int proximoId(){
+        
+        int maiorId = 0;
+        
+        for (Usuario user : Banco.usuario) {           
+           int id = user.getId();
+            
+            if(maiorId < id){
+                maiorId = id;
+            }
+            
+        }
+        
+        return maiorId + 1;
     }
 }

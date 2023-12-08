@@ -19,7 +19,11 @@ public class PacienteDAO {
     }
     
     public void insert(Paciente paciente){
-        Banco.Paciente.add(paciente);
+        
+        if(paciente.getId() == 0){
+            paciente.setId(proximoId());
+            Banco.Paciente.add(paciente);
+        }
     }
     
     
@@ -54,5 +58,21 @@ public class PacienteDAO {
     
     private boolean idIguais(Paciente paciente, Paciente pacienteC) {
         return paciente.getId() ==  pacienteC.getId();
+    }
+    
+    private int proximoId(){
+        
+        int maiorId = 0;
+        
+        for (Paciente paciente : Banco.Paciente) {           
+           int id = paciente.getId();
+            
+            if(maiorId < id){
+                maiorId = id;
+            }
+            
+        }
+        
+        return maiorId + 1;
     }
 }
