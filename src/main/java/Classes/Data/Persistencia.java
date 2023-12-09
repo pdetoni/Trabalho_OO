@@ -83,12 +83,7 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
-    public void escreverArquivoPaciente(String arquivoPaciente, Paciente novoPaciente) {
-        List<Paciente> pacientes = lerArquivoPaciente(arquivoPaciente);
-        if (pacientes == null) {
-            pacientes = new ArrayList<>();
-        }
-        pacientes.add(novoPaciente);
+    public void escreverArquivoPaciente(String arquivoPaciente, List<Paciente> pacientes) {
         try (FileWriter writer = new FileWriter(arquivoPaciente)) {
             gson.toJson(pacientes, writer);
         } catch (IOException e) {

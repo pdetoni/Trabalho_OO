@@ -50,13 +50,13 @@
     "email": "rodolfin@gmail.com"
   },
   {
-    "cep": "12345-000",
-    "endereco": "Rua das Ostras, 90",
-    "id": 6,
+    "cep": "12345-987",
+    "endereco": "Rua das Ostras, 120",
+    "id": 7,
     "nome": "Rodolfin",
-    "cpf": "123.456.789-01",
+    "cpf": "123.456.789-10",
     "sexo": "M",
     "idade": 50,
-    "email": "rods@gmail.com"
+    "email": "rodlf@gmail.com"
   }
 ]

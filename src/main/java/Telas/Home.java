@@ -62,6 +62,7 @@ public class Home extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setForeground(new java.awt.Color(20, 44, 142));
 
         mCadastro.setText("Cadastrar");

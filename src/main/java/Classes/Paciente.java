@@ -26,10 +26,10 @@ public class Paciente extends Perfil {
     public void setCep(String cep) {
         this.cep = cep;
     }
-    
+
+    //Ajuste no toString para exibir o ID também, além do nome (ultil classe Delete)
     @Override
     public String toString() {
-        return getNome();
+        return "ID: " + id + ", Nome: " + nome;
     }
-    
 }

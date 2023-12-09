@@ -4,6 +4,8 @@ import Classes.Data.Persistencia;
 import Classes.Paciente;
 import Classes.DAO.PacienteDAO;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 
@@ -147,10 +149,15 @@ public class AddPaciente extends JFrame {
             return;
         }
 
-        int id = pacienteDAO.getUltimoId(); //Código para pegar o último ID cadastrado, fazendo com que não tenha ID repetido
+        int id = pacienteDAO.getUltimoId();
         Paciente paciente = new Paciente(id, nome, cpf, sexo.charAt(0), idade, email, cep, endereco);
         Persistencia persistencia = new Persistencia();
-        persistencia.escreverArquivoPaciente("src/main/java/Classes/Data/pacientes.json", paciente);
+        List<Paciente> pacientes = persistencia.lerArquivoPaciente("src/main/java/Classes/Data/pacientes.json");
+        if (pacientes == null) {
+            pacientes = new ArrayList<>();
+        }
+        pacientes.add(paciente);
+        persistencia.escreverArquivoPaciente("src/main/java/Classes/Data/pacientes.json", pacientes);
 
         JOptionPane.showMessageDialog(this, "Paciente inserido com sucesso!");
         voltarButtonActionPerformed();
