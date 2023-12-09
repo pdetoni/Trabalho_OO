@@ -6,6 +6,7 @@ package Classes.DAO;
 
 import Classes.Usuario;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -49,9 +50,9 @@ public class UsuarioDAO {
         }
         return false;
     }
-    
-    
-    public ArrayList<Usuario> selectAll(){
+
+
+    public List<Usuario> selectAll(){
         return Banco.usuario;
     }
     

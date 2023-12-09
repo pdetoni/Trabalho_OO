@@ -7,12 +7,13 @@ import Classes.Consulta;
 import Classes.Usuario;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Banco {
-    public static ArrayList<Usuario> usuario;
-    public static ArrayList<Paciente> Paciente;
-    public static ArrayList<Consulta> Consulta;
-    public static ArrayList<Agenda> Agenda;
+    public static List<Usuario> usuario;
+    public static List<Paciente> Paciente;
+    public static List<Consulta> Consulta;
+    public static List<Agenda> Agenda;
 
     public static void inicia() {
         Persistencia persistencia = new Persistencia();

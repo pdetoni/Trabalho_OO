@@ -5,6 +5,7 @@ import Classes.Data.Persistencia;
 import Classes.Paciente;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
+import java.util.List;
 
 public class VisualizarPacientes extends javax.swing.JFrame {
 
@@ -73,9 +74,9 @@ public class VisualizarPacientes extends javax.swing.JFrame {
 
     private void loadClientTable() {
         DefaultTableModel model = (DefaultTableModel) clientTable.getModel();
-        model.setRowCount(0); // Clear the table
+        model.setRowCount(0);
         Persistencia persistencia = new Persistencia();
-        ArrayList<Paciente> pacientes = persistencia.lerArquivoPaciente("src/main/java/Classes/Data/pacientes.json");
+        List<Paciente> pacientes = persistencia.lerArquivoPaciente("src/main/java/Classes/Data/pacientes.json");
         for (Paciente paciente : pacientes) {
             model.addRow(new Object[]{paciente.getId(), paciente.getNome(), paciente.getEmail(), paciente.getEndereco()});
         }

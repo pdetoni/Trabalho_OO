@@ -13,6 +13,7 @@ import Classes.Paciente;
 import Controller.Helper.RegistrosH;
 import Telas.Registros;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -29,25 +30,19 @@ public class RegistrosC {
     
     public void attPaciente(){
         PacienteDAO paciente = new PacienteDAO();
-        
-        ArrayList<Paciente> pacientes = paciente.selectAll();
-        
+        List<Paciente> pacientes = paciente.selectAll();
         helper.preencherPac(pacientes);
     }
     
     public void attConsulta(){
        ConsultaDAO consulta = new ConsultaDAO();
-       
-       ArrayList<Consulta> consultas = consulta.selectAll();
-       
+        List<Consulta> consultas = consulta.selectAll();
        helper.preencherCons(consultas);
     }
     
     public void atualizaTabela(){
         AgendaDAO ag = new AgendaDAO();
-        
-        ArrayList<Agenda> registros = ag.selectAll();
-        
+        List<Agenda> registros = ag.selectAll();
         helper.preenche(registros);
     }
     

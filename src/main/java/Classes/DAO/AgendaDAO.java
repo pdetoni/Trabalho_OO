@@ -6,6 +6,7 @@ package Classes.DAO;
 
 import Classes.Agenda;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -43,8 +44,8 @@ public class AgendaDAO {
         }
         return false;
     }
- 
-    public ArrayList<Agenda> selectAll(){
+
+    public List<Agenda> selectAll(){
         return Banco.Agenda;
     }
 

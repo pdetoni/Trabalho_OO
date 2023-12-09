@@ -56,8 +56,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel2.setText("Nome:");
+        jLabel2.setText("Nome");
 
+        nome.setBackground(new java.awt.Color(204, 204, 204));
         nome.setText("\n");
         nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,8 +68,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel3.setText("CPF:");
+        jLabel3.setText("CPF");
 
+        cpf.setBackground(new java.awt.Color(204, 204, 204));
         cpf.setText("\n");
         cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,8 +80,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel4.setText("Sexo:");
+        jLabel4.setText("Sexo");
 
+        sexo.setBackground(new java.awt.Color(204, 204, 204));
         sexo.setText("\n");
         sexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,8 +92,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel5.setText("Idade:");
+        jLabel5.setText("Idade");
 
+        idade.setBackground(new java.awt.Color(204, 204, 204));
         idade.setText("\n");
         idade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +104,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel6.setText("E-Mail:");
+        jLabel6.setText("E-Mail");
 
+        email.setBackground(new java.awt.Color(204, 204, 204));
         email.setText("\n");
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,8 +116,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel7.setText("CEP:");
+        jLabel7.setText("CEP");
 
+        cep.setBackground(new java.awt.Color(204, 204, 204));
         cep.setText("\n");
         cep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,8 +128,9 @@ public class CriaPaciente extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(16, 114, 235));
-        jLabel8.setText("Endereço:");
+        jLabel8.setText("Endereço");
 
+        endereco.setBackground(new java.awt.Color(204, 204, 204));
         endereco.setText("\n");
         endereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +139,7 @@ public class CriaPaciente extends javax.swing.JFrame {
         });
 
         adicionar.setBackground(new java.awt.Color(20, 44, 142));
-        adicionar.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        adicionar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         adicionar.setForeground(new java.awt.Color(255, 255, 255));
         adicionar.setText("Adicionar");
         adicionar.addActionListener(new java.awt.event.ActionListener() {

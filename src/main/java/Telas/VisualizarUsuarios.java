@@ -5,6 +5,7 @@ import Classes.Data.Persistencia;
 import Classes.Usuario;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
+import java.util.List;
 
 public class VisualizarUsuarios extends javax.swing.JFrame {
 
@@ -73,9 +74,9 @@ public class VisualizarUsuarios extends javax.swing.JFrame {
 
     private void loadUserTable() {
         DefaultTableModel model = (DefaultTableModel) userTable.getModel();
-        model.setRowCount(0); // Clear the table
+        model.setRowCount(0);
         Persistencia persistencia = new Persistencia();
-        ArrayList<Usuario> usuarios = persistencia.lerArquivoUsuario("src/main/java/Classes/Data/usuarios.json");
+        List<Usuario> usuarios = persistencia.lerArquivoUsuario("src/main/java/Classes/Data/usuarios.json");
         for (Usuario usuario : usuarios) {
             model.addRow(new Object[]{usuario.getId(), usuario.getNome(), usuario.getEmail()});
         }

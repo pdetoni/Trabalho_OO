@@ -10,6 +10,7 @@ import Classes.Exception.AgendaException;
 import Classes.Paciente;
 import Telas.Registros;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,7 +25,7 @@ public class RegistrosH implements IHelper {
         this.view = view;
     }
 
-    public void preenche(ArrayList<Agenda> registros) {
+    public void preenche(List<Agenda> registros) {
         DefaultTableModel table = (DefaultTableModel) view.getjTable1().getModel();
         
         table.setNumRows(0);
@@ -34,7 +35,7 @@ public class RegistrosH implements IHelper {
         }
     }
 
-    public void preencherPac(ArrayList<Paciente> pacientes) {
+    public void preencherPac(List<Paciente> pacientes) {
         DefaultComboBoxModel combo = (DefaultComboBoxModel) view.getPacienteCombo().getModel();
         
         for (Paciente paciente : pacientes) {
@@ -43,7 +44,7 @@ public class RegistrosH implements IHelper {
     }
     
 
-    public void preencherCons(ArrayList<Consulta> consultas) {
+    public void preencherCons(List<Consulta> consultas) {
         DefaultComboBoxModel combo = (DefaultComboBoxModel) view.getConsultaCombo().getModel();
         
         for (Consulta consulta : consultas) {

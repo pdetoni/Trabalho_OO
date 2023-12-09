@@ -6,6 +6,7 @@ package Classes.DAO;
 
 import Classes.Consulta;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -39,9 +40,9 @@ public class ConsultaDAO {
         }
         return false;
     }
-    
-    
-    public ArrayList<Consulta> selectAll(){
+
+
+    public List<Consulta> selectAll(){
         return Banco.Consulta;
     }
     

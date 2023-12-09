@@ -6,6 +6,7 @@ package Classes.DAO;
 
 import Classes.Paciente;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -51,7 +52,7 @@ public class PacienteDAO {
     }
 
 
-    public ArrayList<Paciente> selectAll(){
+    public List<Paciente> selectAll(){
         return Banco.Paciente;
     }
     
