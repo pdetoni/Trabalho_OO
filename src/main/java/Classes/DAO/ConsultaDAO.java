@@ -1,10 +1,23 @@
 package Classes.DAO;
 
 import Classes.Consulta;
+import Classes.Data.Persistencia;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConsultaDAO {
+
+    // Construtor para ler o arquivo e carregar a lista de Consultas
+    public ConsultaDAO() {
+        Persistencia persistencia = new Persistencia();
+        List<Consulta> consultas = persistencia.lerArquivoConsulta("src/main/java/Classes/Data/consultas.json");
+        if (consultas == null) {
+            consultas = new ArrayList<>();
+        }
+        Banco.Consulta = consultas;
+    }
+
     public void insert(Consulta consulta){
         Banco.Consulta.add(consulta);
     }
@@ -33,9 +46,13 @@ public class ConsultaDAO {
         return false;
     }
 
-
+    //Ajuste para não ocorrer de retorno null em multiplas classes que usam Consulta
     public List<Consulta> selectAll(){
-        return Banco.Consulta;
+        List<Consulta> consultas = Banco.Consulta;
+        if (consultas == null) {
+            consultas = new ArrayList<>();
+        }
+        return consultas;
     }
     
     

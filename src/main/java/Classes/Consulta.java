@@ -4,11 +4,13 @@ public class Consulta {
 
     private int id;
     private String tipo;
-    private MedicoResponsavel medicoResponsavel;
+    private Medico medicoResponsavel;
 
-    public Consulta(int id, String tipo) {
+
+    public Consulta(int id, String tipo, Medico medicoResponsavel) {
         this.id = id;
         this.tipo = tipo;
+        this.medicoResponsavel = medicoResponsavel;
     }
 
     public int getId() {
@@ -27,14 +29,13 @@ public class Consulta {
         this.tipo = tipo;
     }
 
-    public MedicoResponsavel getMedicoResponsavel() {
+    public Medico getMedicoResponsavel() {
         return medicoResponsavel;
     }
 
-    public void setMedicoResponsavel(MedicoResponsavel medicoResponsavel) {
+    public void setMedicoResponsavel(Medico medicoResponsavel) {
         this.medicoResponsavel = medicoResponsavel;
     }
-
 
     @Override
     public String toString() {

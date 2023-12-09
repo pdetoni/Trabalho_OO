@@ -1,6 +1,8 @@
 package Classes.DAO;
 
 import Classes.Agenda;
+import Classes.Data.Persistencia;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,22 +17,24 @@ public class AgendaDAO {
         
     }
 
-    public boolean update(Agenda Agenda){
-        
+    public void update(Agenda agenda) {
         for (int i = 0; i < Banco.Agenda.size(); i++) {
-            if(idSaoIguais(Banco.Agenda.get(i),Agenda)){
-                Banco.Agenda.set(i, Agenda);
-                return true;
+            if (Banco.Agenda.get(i).getId() == agenda.getId()) {
+                Banco.Agenda.set(i, agenda);
+                break;
             }
         }
-        return false;      
-
+        Persistencia persistencia = new Persistencia();
+        persistencia.escreverArquivoAgenda("src/main/java/Classes/Data/agendas.json", Banco.Agenda);
     }
-    
-    public boolean delete(Agenda Agenda){
-        for (Agenda AgendaLista : Banco.Agenda) {
-            if(idSaoIguais(AgendaLista,Agenda)){
-                Banco.Agenda.remove(AgendaLista);
+
+
+    public boolean delete(int id){
+        for (Agenda agendaLista : Banco.Agenda) {
+            if(agendaLista.getId() == id){
+                Banco.Agenda.remove(agendaLista);
+                Persistencia persistencia = new Persistencia();
+                persistencia.escreverArquivoAgenda("src/main/java/Classes/Data/agendas.json", Banco.Agenda);
                 return true;
             }
         }
@@ -62,6 +66,15 @@ public class AgendaDAO {
             
         }
         
+        return maiorId + 1;
+    }
+
+    //Retornar o ultimo id para uso na tela de adicionar agenda
+    public int getUltimoId() {
+        int maiorId = 0;
+        for (Agenda agenda : Banco.Agenda) {
+            maiorId = Math.max(maiorId, agenda.getId());
+        }
         return maiorId + 1;
     }
 }

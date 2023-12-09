@@ -90,12 +90,7 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
-    public void escreverArquivoAgenda(String arquivoAgenda, Agenda novaAgenda) {
-        List<Agenda> agendas = lerArquivoAgenda(arquivoAgenda);
-        if (agendas == null) {
-            agendas = new ArrayList<>();
-        }
-        agendas.add(novaAgenda);
+    public void escreverArquivoAgenda(String arquivoAgenda, List<Agenda> agendas) {
         try (FileWriter writer = new FileWriter(arquivoAgenda)) {
             gson.toJson(agendas, writer);
         } catch (IOException e) {
