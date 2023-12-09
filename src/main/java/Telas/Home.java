@@ -119,11 +119,15 @@ public class Home extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        
+        new VisualizarUsuarios().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar usuários
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        new VisualizarPacientes().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar pacientes
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

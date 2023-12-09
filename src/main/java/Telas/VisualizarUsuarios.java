@@ -1,8 +1,10 @@
 package Telas;
 
 import Classes.DAO.UsuarioDAO;
+import Classes.Data.Persistencia;
 import Classes.Usuario;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
 
 public class VisualizarUsuarios extends javax.swing.JFrame {
 
@@ -72,11 +74,12 @@ public class VisualizarUsuarios extends javax.swing.JFrame {
     private void loadUserTable() {
         DefaultTableModel model = (DefaultTableModel) userTable.getModel();
         model.setRowCount(0); // Clear the table
-        for (Usuario usuario : usuarioDAO.selectAll()) {
+        Persistencia persistencia = new Persistencia();
+        ArrayList<Usuario> usuarios = persistencia.lerArquivoUsuario("src/main/java/Classes/Data/usuarios.json");
+        for (Usuario usuario : usuarios) {
             model.addRow(new Object[]{usuario.getId(), usuario.getNome(), usuario.getEmail()});
         }
     }
-
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

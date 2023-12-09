@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nome": "Gleiph",
+    "cpf": "123.456.789-10",
+    "sexo": "M",
+    "idade": 36,
+    "email": "gleiph@gmail.com",
+    "senha": "senha",
+    "cargo": "Dentista"
+  },
+  {
+    "id": 2,
+    "nome": "Lúcia",
+    "cpf": "165.786.909-50",
+    "sexo": "F",
+    "idade": 22,
+    "email": "lucia@gmail.com",
+    "senha": "senha",
+    "cargo": "Secretária"
+  }
+]

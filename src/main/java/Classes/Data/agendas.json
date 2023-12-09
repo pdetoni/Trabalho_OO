@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "data": "22/12/2023 14:30",
+    "paciente": {
+      "id": 1,
+      "nome": "Leo",
+      "cpf": "335.676.769-58",
+      "sexo": "M",
+      "idade": 16,
+      "email": "leo@gmail.com",
+      "cep": "51420-487",
+      "endereco": "Rua Patos, 32"
+    },
+    "consulta": {
+      "id": 1,
+      "tipo": "Dentista"
+    }
+  },
+  {
+    "id": 2,
+    "data": "18/12/2023 09:30",
+    "paciente": {
+      "id": 2,
+      "nome": "Marta",
+      "cpf": "763.876.087-88",
+      "sexo": "F",
+      "idade": 22,
+      "email": "marta@gmail.com",
+      "cep": "13430-490",
+      "endereco": "Rua Garças, 45"
+    },
+    "consulta": {
+      "id": 2,
+      "tipo": "Oftalmologista"
+    }
+  }
+]
