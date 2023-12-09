@@ -38,6 +38,7 @@ public class Home extends javax.swing.JFrame {
         mVisualizar = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
@@ -105,6 +106,14 @@ public class Home extends javax.swing.JFrame {
         });
         mVisualizar.add(jMenuItem5);
 
+        jMenuItem2.setText("Agenda");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        mVisualizar.add(jMenuItem2);
+
         jMenuBar1.add(mVisualizar);
 
         setJMenuBar(jMenuBar1);
@@ -134,6 +143,12 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.controller.irPCriaPacientes();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new VisualizarAgenda().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +188,7 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

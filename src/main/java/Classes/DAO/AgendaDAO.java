@@ -45,10 +45,14 @@ public class AgendaDAO {
         return false;
     }
 
-    public List<Agenda> selectAll(){
-        return Banco.Agenda;
+    //Ajuste para não ocorrer de retorno null ao criar o visualizar agenda
+    public List<Agenda> selectAll() {
+        List<Agenda> agendas = Banco.Agenda;
+        if (agendas == null) {
+            agendas = new ArrayList<>();
+        }
+        return agendas;
     }
-
     private boolean idSaoIguais(Agenda agenda, Agenda agendaC) {
         return agenda.getId() ==  agendaC.getId();
     }
