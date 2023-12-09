@@ -1,22 +1,42 @@
 [
   {
+    "cep": "51420-487",
+    "endereco": "Rua Patos, 32",
     "id": 1,
     "nome": "Leo",
     "cpf": "335.676.769-58",
     "sexo": "M",
     "idade": 16,
-    "email": "leo@gmail.com",
-    "cep": "51420-487",
-    "endereco": "Rua Patos, 32"
+    "email": "leo@gmail.com"
   },
   {
+    "cep": "13430-490",
+    "endereco": "Rua Garças, 45",
     "id": 2,
     "nome": "Marta",
     "cpf": "763.876.087-88",
     "sexo": "F",
     "idade": 22,
-    "email": "marta@gmail.com",
-    "cep": "13430-490",
-    "endereco": "Rua Garças, 45"
+    "email": "marta@gmail.com"
+  },
+  {
+    "cep": "00000-000",
+    "endereco": "Rua do Teste, 00",
+    "id": 3,
+    "nome": "Teste",
+    "cpf": "000.000.000-70",
+    "sexo": "M",
+    "idade": 40,
+    "email": "email@teste.com"
+  },
+  {
+    "cep": "00000-001",
+    "endereco": "Rua das Ostras, 01",
+    "id": 4,
+    "nome": "Rodolfo",
+    "cpf": "000.000.000-01",
+    "sexo": "M",
+    "idade": 30,
+    "email": "rodolfo@gmail.com"
   }
 ]

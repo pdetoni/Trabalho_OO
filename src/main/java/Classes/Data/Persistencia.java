@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Persistencia {
 
@@ -27,8 +28,8 @@ public class Persistencia {
     }
 
 
-    public ArrayList<Usuario> lerArquivoUsuario(String arquivoUsuario) {
-        ArrayList<Usuario> usuarios = new ArrayList<>();
+    public List<Usuario> lerArquivoUsuario(String arquivoUsuario) {
+        List<Usuario> usuarios = new ArrayList<>();
         try (FileReader reader = new FileReader(arquivoUsuario)) {
             Type listType = new TypeToken<ArrayList<Usuario>>(){}.getType();
             usuarios = gson.fromJson(reader, listType);
@@ -38,8 +39,8 @@ public class Persistencia {
         return usuarios;
     }
 
-    public ArrayList<Paciente> lerArquivoPaciente(String arquivoPaciente) {
-        ArrayList<Paciente> pacientes = new ArrayList<>();
+    public List<Paciente> lerArquivoPaciente(String arquivoPaciente) {
+        List<Paciente> pacientes = new ArrayList<>();
         try (FileReader reader = new FileReader(arquivoPaciente)) {
             Type listType = new TypeToken<ArrayList<Paciente>>(){}.getType();
             pacientes = gson.fromJson(reader, listType);
@@ -49,8 +50,8 @@ public class Persistencia {
         return pacientes;
     }
 
-    public ArrayList<Consulta> lerArquivoConsulta(String arquivoConsulta) {
-        ArrayList<Consulta> consultas = new ArrayList<>();
+    public List<Consulta> lerArquivoConsulta(String arquivoConsulta) {
+        List<Consulta> consultas = new ArrayList<>();
         try (FileReader reader = new FileReader(arquivoConsulta)) {
             Type listType = new TypeToken<ArrayList<Consulta>>(){}.getType();
             consultas = gson.fromJson(reader, listType);
@@ -60,8 +61,8 @@ public class Persistencia {
         return consultas;
     }
 
-    public ArrayList<Agenda> lerArquivoAgenda(String arquivoAgenda) {
-        ArrayList<Agenda> agendas = new ArrayList<>();
+    public List<Agenda> lerArquivoAgenda(String arquivoAgenda) {
+        List<Agenda> agendas = new ArrayList<>();
         try (FileReader reader = new FileReader(arquivoAgenda)) {
             Type listType = new TypeToken<ArrayList<Agenda>>(){}.getType();
             agendas = gson.fromJson(reader, listType);
@@ -70,4 +71,42 @@ public class Persistencia {
         }
         return agendas;
     }
+    public void escreverArquivoUsuario(String arquivoUsuario, Usuario novoUsuario) {
+        List<Usuario> usuarios = lerArquivoUsuario(arquivoUsuario);
+        if (usuarios == null) {
+            usuarios = new ArrayList<>();
+        }
+        usuarios.add(novoUsuario);
+        try (FileWriter writer = new FileWriter(arquivoUsuario)) {
+            gson.toJson(usuarios, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void escreverArquivoPaciente(String arquivoPaciente, Paciente novoPaciente) {
+        List<Paciente> pacientes = lerArquivoPaciente(arquivoPaciente);
+        if (pacientes == null) {
+            pacientes = new ArrayList<>();
+        }
+        pacientes.add(novoPaciente);
+        try (FileWriter writer = new FileWriter(arquivoPaciente)) {
+            gson.toJson(pacientes, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void escreverArquivoAgenda(String arquivoAgenda, Agenda novaAgenda) {
+        List<Agenda> agendas = lerArquivoAgenda(arquivoAgenda);
+        if (agendas == null) {
+            agendas = new ArrayList<>();
+        }
+        agendas.add(novaAgenda);
+        try (FileWriter writer = new FileWriter(arquivoAgenda)) {
+            gson.toJson(agendas, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
