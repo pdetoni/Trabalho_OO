@@ -62,7 +62,7 @@ public class Agenda {
 
     @Override
     public String toString() {
-        return "Agenda{" + "id=" + id + ", data=" + data + ", paciente=" + paciente.getNome() + ", consulta=" + consulta.toString() + '}';
+        return "Agenda ID: " + id + ", Data: " + dataForm() + ", Paciente: " + paciente.getNome() + ", Consulta: " + consulta.getTipo();
     }
 
     public String dataForm() {

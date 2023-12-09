@@ -64,27 +64,5 @@
         "cpf": "987.654.321-09"
       }
     }
-  },
-  {
-    "id": 4,
-    "data": "10/10/2023 15:00",
-    "paciente": {
-      "cep": "00000-000",
-      "endereco": "Rua do Teste, 00",
-      "id": 3,
-      "nome": "Teste",
-      "cpf": "000.000.000-70",
-      "sexo": "M",
-      "idade": 40,
-      "email": "email@teste.com"
-    },
-    "consulta": {
-      "id": 1,
-      "tipo": "Dentista",
-      "medicoResponsavel": {
-        "nome": "Arnaldo Cesar",
-        "cpf": "123.456.789-01"
-      }
-    }
   }
 ]
