@@ -33,6 +33,8 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         mCadastro = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jRemover = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         mEditar = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         mVisualizar = new javax.swing.JMenu();
@@ -76,6 +78,18 @@ public class Home extends javax.swing.JFrame {
         mCadastro.add(jMenuItem1);
 
         jMenuBar1.add(mCadastro);
+
+        jRemover.setText("Remover");
+
+        jMenuItem6.setText("Paciente");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jRemover.add(jMenuItem6);
+
+        jMenuBar1.add(jRemover);
 
         mEditar.setText("Editar");
 
@@ -152,6 +166,12 @@ public class Home extends javax.swing.JFrame {
         Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        new DeletePaciente().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -194,7 +214,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenu jRemover;
     private javax.swing.JMenu mCadastro;
     private javax.swing.JMenu mEditar;
     private javax.swing.JMenu mVisualizar;

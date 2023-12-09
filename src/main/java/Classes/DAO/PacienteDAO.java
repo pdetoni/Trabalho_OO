@@ -29,16 +29,15 @@ public class PacienteDAO {
         Banco.Paciente.add(paciente);
     }
 
-    public boolean update(Paciente paciente) {
-
+    public void update(Paciente paciente) {
         for (int i = 0; i < Banco.Paciente.size(); i++) {
-            if (idIguais(Banco.Paciente.get(i), paciente)) {
+            if (Banco.Paciente.get(i).getId() == paciente.getId()) {
                 Banco.Paciente.set(i, paciente);
-                return true;
+                break;
             }
         }
-        return false;
-
+        Persistencia persistencia = new Persistencia();
+        persistencia.escreverArquivoPaciente("src/main/java/Classes/Data/pacientes.json", Banco.Paciente);
     }
 
     // Atualização para deletar do JSON, além de só remover do banco
@@ -83,7 +82,14 @@ public class PacienteDAO {
 
         return maiorId + 1;
     }
-
+    public Paciente getPaciente(int id) {
+        for (Paciente paciente : Banco.Paciente) {
+            if (paciente.getId() == id) {
+                return paciente;
+            }
+        }
+        return null;
+    }
     public int getUltimoId() {
         return ultimoId;
     }

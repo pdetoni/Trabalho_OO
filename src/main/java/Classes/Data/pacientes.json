@@ -58,5 +58,15 @@
     "sexo": "M",
     "idade": 50,
     "email": "rodlf@gmail.com"
+  },
+  {
+    "cep": "12345-987",
+    "endereco": "Rua das Ostras, 120",
+    "id": 8,
+    "nome": "Rodolfão",
+    "cpf": "123.456.789-10",
+    "sexo": "M",
+    "idade": 50,
+    "email": "rodlf@gmail.com"
   }
 ]

@@ -22,12 +22,27 @@ public class AddPaciente extends JFrame {
     private JButton voltarButton;
     private PacienteDAO pacienteDAO;
 
+    private Paciente paciente = null;
+
     public AddPaciente() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setPreferredSize(new Dimension(400, 400));
         this.pack();
         pacienteDAO = new PacienteDAO();
+    }
+
+    //Situação para edição de paciente existente em EditPaciente
+    public AddPaciente(Paciente paciente) {
+        this();
+        this.paciente = paciente;
+        nomeField.setText(paciente.getNome());
+        cpfField.setText(paciente.getCpf());
+        sexoField.setText(String.valueOf(paciente.getSexo()));
+        idadeField.setText(String.valueOf(paciente.getIdade()));
+        emailField.setText(paciente.getEmail());
+        cepField.setText(paciente.getCep());
+        enderecoField.setText(paciente.getEndereco());
     }
 
     private void initComponents() {
@@ -149,17 +164,28 @@ public class AddPaciente extends JFrame {
             return;
         }
 
-        int id = pacienteDAO.getUltimoId();
-        Paciente paciente = new Paciente(id, nome, cpf, sexo.charAt(0), idade, email, cep, endereco);
-        Persistencia persistencia = new Persistencia();
-        List<Paciente> pacientes = persistencia.lerArquivoPaciente("src/main/java/Classes/Data/pacientes.json");
-        if (pacientes == null) {
-            pacientes = new ArrayList<>();
+        if (paciente != null) {
+            paciente.setNome(nome);
+            paciente.setCpf(cpf);
+            paciente.setSexo(sexo.charAt(0));
+            paciente.setIdade(idade);
+            paciente.setEmail(email);
+            paciente.setCep(cep);
+            paciente.setEndereco(endereco);
+            pacienteDAO.update(paciente);
+        } else {
+            int id = pacienteDAO.getUltimoId();
+            Paciente newPaciente = new Paciente(id, nome, cpf, sexo.charAt(0), idade, email, cep, endereco);
+            Persistencia persistencia = new Persistencia();
+            List<Paciente> pacientes = persistencia.lerArquivoPaciente("src/main/java/Classes/Data/pacientes.json");
+            if (pacientes == null) {
+                pacientes = new ArrayList<>();
+            }
+            pacientes.add(newPaciente);
+            persistencia.escreverArquivoPaciente("src/main/java/Classes/Data/pacientes.json", pacientes);
         }
-        pacientes.add(paciente);
-        persistencia.escreverArquivoPaciente("src/main/java/Classes/Data/pacientes.json", pacientes);
 
-        JOptionPane.showMessageDialog(this, "Paciente inserido com sucesso!");
+        JOptionPane.showMessageDialog(this, "Paciente atualizado com sucesso!");
         voltarButtonActionPerformed();
     }
 
