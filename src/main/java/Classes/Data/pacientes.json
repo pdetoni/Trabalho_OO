@@ -38,5 +38,15 @@
     "sexo": "M",
     "idade": 30,
     "email": "rodolfo@gmail.com"
+  },
+  {
+    "cep": "00000-001",
+    "endereco": "Rua Lá, 10",
+    "id": 5,
+    "nome": "Rodolfo",
+    "cpf": "000.000.000-71",
+    "sexo": "M",
+    "idade": 88,
+    "email": "rodolfin@gmail.com"
   }
 ]

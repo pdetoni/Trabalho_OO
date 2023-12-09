@@ -18,12 +18,14 @@ public class AddPaciente extends JFrame {
     private JTextField enderecoField;
     private JButton avancarButton;
     private JButton voltarButton;
+    private PacienteDAO pacienteDAO;
 
     public AddPaciente() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setPreferredSize(new Dimension(400, 400));
         this.pack();
+        pacienteDAO = new PacienteDAO();
     }
 
     private void initComponents() {
@@ -121,13 +123,16 @@ public class AddPaciente extends JFrame {
         }
 
         int idade = Integer.parseInt(idadeStr);
-        Paciente paciente = new Paciente(0, nome, cpf, sexo.charAt(0), idade, email, cep, endereco);
+        int id = pacienteDAO.getUltimoId(); //Código para pegar o último ID cadastrado, fazendo com que não tenha ID repetido
+        Paciente paciente = new Paciente(id, nome, cpf, sexo.charAt(0), idade, email, cep, endereco);
         Persistencia persistencia = new Persistencia();
         persistencia.escreverArquivoPaciente("src/main/java/Classes/Data/pacientes.json", paciente);
 
         JOptionPane.showMessageDialog(this, "Paciente inserido com sucesso!");
         voltarButtonActionPerformed();
     }
+
+
     private void voltarButtonActionPerformed() {
         this.dispose();
         new Home().setVisible(true);

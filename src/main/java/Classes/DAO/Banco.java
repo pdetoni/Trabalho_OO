@@ -17,8 +17,13 @@ public class Banco {
 
     public static void inicia() {
         Persistencia persistencia = new Persistencia();
-        usuario = persistencia.lerArquivoUsuario("src/main/java/Classes/Data/usuarios.json");
         Paciente = persistencia.lerArquivoPaciente("src/main/java/Classes/Data/pacientes.json");
+        for (Paciente paciente : Paciente) {
+            PacienteDAO.ultimoId = Math.max(PacienteDAO.ultimoId, paciente.getId() + 1);
+        }
+
+        usuario = persistencia.lerArquivoUsuario("src/main/java/Classes/Data/usuarios.json");
+
         Consulta = persistencia.lerArquivoConsulta("src/main/java/Classes/Data/consultas.json");
         Agenda = persistencia.lerArquivoAgenda("src/main/java/Classes/Data/agendas.json");
     }
