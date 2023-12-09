@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UsuarioDAO {
+public class UsuarioDAO extends GenericDAO<Usuario>{
 
     //Construtor que inicia banco para garantir que retorno não seja nulo
     public UsuarioDAO() {

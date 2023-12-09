@@ -6,7 +6,7 @@ import Classes.Paciente;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PacienteDAO {
+public class PacienteDAO extends GenericDAO<Paciente>{
 
     //ID que será incrementado para identificar cada paciente como um novo, mudar caso necessário
     protected static int ultimoId = 4;

@@ -6,7 +6,7 @@ import Classes.Data.Persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgendaDAO {
+public class AgendaDAO extends GenericDAO<Agenda>{
 
     // Construtor para ler o arquivo e carregar a lista de Agendas
     public AgendaDAO() {

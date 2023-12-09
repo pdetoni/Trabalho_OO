@@ -6,7 +6,7 @@ import Classes.Data.Persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConsultaDAO {
+public class ConsultaDAO extends GenericDAO<Consulta>{
 
     // Construtor para ler o arquivo e carregar a lista de Consultas
     public ConsultaDAO() {
