@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controller;
 
 import Classes.Agenda;
@@ -15,10 +11,7 @@ import Telas.Registros;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author pdper
- */
+
 public class RegistrosC {
     private final Registros view;
     private final RegistrosH helper;

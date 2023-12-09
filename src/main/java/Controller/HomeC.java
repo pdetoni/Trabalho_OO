@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controller;
 
 import Classes.Agenda;
@@ -9,10 +5,6 @@ import Telas.CriaPaciente;
 import Telas.Home;
 import Telas.Registros;
 
-/**
- *
- * @author pdper
- */
 public class HomeC {
     private final Home view;
 

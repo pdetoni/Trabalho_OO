@@ -1,6 +1,0 @@
-1;Dentista
-2;Oftalmologista
-3;Ortopedista
-4;Pediatra
-5;Cardiologista
-6;Dematologista

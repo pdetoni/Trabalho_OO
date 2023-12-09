@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Classes.DAO;
 
 import Classes.Data.Persistencia;
@@ -9,10 +5,6 @@ import Classes.Paciente;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author pdper
- */
 public class PacienteDAO {
 
     //ID que será incrementado para identificar cada paciente como um novo, mudar caso necessário

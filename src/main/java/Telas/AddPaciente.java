@@ -122,7 +122,31 @@ public class AddPaciente extends JFrame {
             return;
         }
 
-        int idade = Integer.parseInt(idadeStr);
+        int idade;
+        try { // Validação de idade, para que não seja inserido um valor negativo ou maior que 150 no campo, assumindo que o ser humano que viveu mais tempo foi 122 anos
+            idade = Integer.parseInt(idadeStr);
+            if (idade <= 0 || idade > 130) {
+                JOptionPane.showMessageDialog(this, "A idade deve ser um número entre 0 e 150!");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "A idade deve ser um número!");
+            return;
+        }
+
+        if (!email.contains("@")) { //Validação simples de email, para que seja inserido um email válido
+            JOptionPane.showMessageDialog(this, "O email deve ser um formato válido!");
+            return;
+        }
+        if (!cpf.matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$")) {//Uso de expessão regular para validar o CPF inserido esta no formato correto
+            JOptionPane.showMessageDialog(this, "O CPF deve estar no formato 000.000.000-00!");
+            return;
+        }
+        if (!cep.matches("^\\d{5}-\\d{3}$")) {//Uso de expessão regular para validar o CEP inserido esta no formato correto
+            JOptionPane.showMessageDialog(this, "O CEP deve estar no formato 00000-000!");
+            return;
+        }
+
         int id = pacienteDAO.getUltimoId(); //Código para pegar o último ID cadastrado, fazendo com que não tenha ID repetido
         Paciente paciente = new Paciente(id, nome, cpf, sexo.charAt(0), idade, email, cep, endereco);
         Persistencia persistencia = new Persistencia();

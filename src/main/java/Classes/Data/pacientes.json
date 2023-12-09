@@ -48,5 +48,15 @@
     "sexo": "M",
     "idade": 88,
     "email": "rodolfin@gmail.com"
+  },
+  {
+    "cep": "12345-000",
+    "endereco": "Rua das Ostras, 90",
+    "id": 6,
+    "nome": "Rodolfin",
+    "cpf": "123.456.789-01",
+    "sexo": "M",
+    "idade": 50,
+    "email": "rods@gmail.com"
   }
 ]

@@ -1,3 +1,0 @@
-1;22/12/2023 14:30;1;Leo;335.676.769-58;M;16;leo@gmail.com;51420-487;Rua Patos, 32;1;Dentista
-2;18/12/2023 09:30;2;Marta;763.876.087-88;F;22;marta@gmail.com;13430-490;Rua Garças, 45;4;Pediatra
-3;14/12/2023 07:30;3;Felipe;142.539.089-56;M;30;felipe@gmail.com;49420-932;Rua Joana, 17;3;Ortopedista

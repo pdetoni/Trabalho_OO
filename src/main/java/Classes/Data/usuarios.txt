@@ -1,2 +1,0 @@
-1;Gleiph;123.456.789-10;M;36;gleiph@gmail.com;senha;Dentista
-2;Lúcia;165.786.909-50;F;22;lucia@gmail.com;senha;Secretária
