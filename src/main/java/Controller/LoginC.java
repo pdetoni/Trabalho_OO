@@ -15,22 +15,17 @@ public class LoginC {
         this.view = view;
         this.helper = new LoginH(view);
     }
-    
-    public void entrar(){
+
+    //Modificações ao entrar para implementação do user root e possivelmente mais no futuro
+    public Usuario entrar(){
         Usuario usuario = helper.getUser();
-        
-        UsuarioDAO userdao = new UsuarioDAO();
-        
-        Usuario userAuth = userdao.selectPorNomeESenha(usuario);
-        
-        if(userAuth != null){
-            Home home = new Home();
-            
-            home.setVisible(true);
-            this.view.dispose();
-        }else{
-            view.msgm("Usuário ou senha inválidos!");
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(usuario);
+
+        if (usuarioAutenticado != null){
+            return usuarioAutenticado;
         }
+        return null;
     }
     
     public void acao(){

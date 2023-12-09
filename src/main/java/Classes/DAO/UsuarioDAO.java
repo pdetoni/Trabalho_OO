@@ -83,4 +83,13 @@ public class UsuarioDAO {
         
         return maiorId + 1;
     }
+
+
+    public int getUltimoId() {
+        int maiorId = 0;
+        for (Usuario usuario : Banco.usuario) {
+            maiorId = Math.max(maiorId, usuario.getId());
+        }
+        return maiorId + 1;
+    }
 }

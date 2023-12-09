@@ -59,4 +59,13 @@ public class ConsultaDAO {
     private boolean idSaoIguais(Consulta consulta, Consulta consultaC) {
         return consulta.getId() ==  consultaC.getId();
     }
+
+
+    public int getUltimoId() {
+        int maiorId = 0;
+        for (Consulta consulta : Banco.Consulta) {
+            maiorId = Math.max(maiorId, consulta.getId());
+        }
+        return maiorId + 1;
+    }
 }
