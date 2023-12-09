@@ -1,9 +1,10 @@
 package Classes;
 
 public class Consulta {
-    
+
     private int id;
     private String tipo;
+    private MedicoResponsavel medicoResponsavel;
 
     public Consulta(int id, String tipo) {
         this.id = id;
@@ -25,6 +26,15 @@ public class Consulta {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public MedicoResponsavel getMedicoResponsavel() {
+        return medicoResponsavel;
+    }
+
+    public void setMedicoResponsavel(MedicoResponsavel medicoResponsavel) {
+        this.medicoResponsavel = medicoResponsavel;
+    }
+
 
     @Override
     public String toString() {

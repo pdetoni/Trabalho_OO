@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+//Classe a ser usado como referencia na construção da interface mais adiante
 package Telas;
 
 import Controller.RegistrosC;
@@ -9,10 +6,6 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-/**
- *
- * @author pdper
- */
 public class Registros extends javax.swing.JFrame {
 
     private final RegistrosC controller;
