@@ -13,6 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class AddAgenda extends JFrame {
@@ -26,6 +27,8 @@ public class AddAgenda extends JFrame {
     private PacienteDAO pacienteDAO;
     private ConsultaDAO consultaDAO;
 
+    private Agenda agenda = null;
+
     public AddAgenda() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -35,6 +38,15 @@ public class AddAgenda extends JFrame {
         pacienteDAO = new PacienteDAO();
         consultaDAO = new ConsultaDAO();
         updateComboBoxes();
+    }
+
+    //Construtor para uso com o EditAgenda
+    public AddAgenda(Agenda agenda) {
+        this();
+        this.agenda = agenda;
+        pacienteComboBox.setSelectedItem(agenda.getPaciente());
+        consultaComboBox.setSelectedItem(agenda.getConsulta());
+        dataField.setText(agenda.dataForm());
     }
 
     private void initComponents() {
@@ -92,31 +104,41 @@ public class AddAgenda extends JFrame {
     private void addButtonActionPerformed() {
         Paciente paciente = (Paciente) pacienteComboBox.getSelectedItem();
         Consulta consulta = (Consulta) consultaComboBox.getSelectedItem();
-        String data = dataField.getText();
+        String dataStr = dataField.getText();
 
-        if (paciente == null || consulta == null || data.isEmpty()) {
+        if (paciente == null || consulta == null || dataStr.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Todos os campos devem ser preenchidos!");
             return;
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         sdf.setLenient(false);
+        Date data;
         try {
-            sdf.parse(data);
+            data = sdf.parse(dataStr);
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "A data deve estar no formato dd/MM/yyyy HH:mm!");
             return;
         }
 
-        int id = agendaDAO.getUltimoId();
-        try {
-            Agenda agenda = new Agenda(id, data, paciente, consulta);
-            agendaDAO.insert(agenda);
-            JOptionPane.showMessageDialog(this, "Agenda adicionada com sucesso!");
-            backButtonActionPerformed();
-        } catch (AgendaException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
+        if (agenda != null) {
+            agenda.setPaciente(paciente);
+            agenda.setConsulta(consulta);
+            agenda.setData(data);
+            agendaDAO.update(agenda);
+        } else {
+            int id = agendaDAO.getUltimoId();
+            try {
+                Agenda newAgenda = new Agenda(id, dataStr, paciente, consulta);
+                agendaDAO.insert(newAgenda);
+            } catch (AgendaException e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+                return;
+            }
         }
+
+        JOptionPane.showMessageDialog(this, "Agenda atualizada com sucesso!");
+        backButtonActionPerformed();
     }
     private void backButtonActionPerformed() {
         this.dispose();
