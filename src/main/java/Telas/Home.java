@@ -33,10 +33,13 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         mCadastro = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jRemover = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         mEditar = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         mVisualizar = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -77,6 +80,14 @@ public class Home extends javax.swing.JFrame {
         });
         mCadastro.add(jMenuItem1);
 
+        jMenuItem7.setText("Agenda");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        mCadastro.add(jMenuItem7);
+
         jMenuBar1.add(mCadastro);
 
         jRemover.setText("Remover");
@@ -89,6 +100,14 @@ public class Home extends javax.swing.JFrame {
         });
         jRemover.add(jMenuItem6);
 
+        jMenuItem8.setText("Agenda");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jRemover.add(jMenuItem8);
+
         jMenuBar1.add(jRemover);
 
         mEditar.setText("Editar");
@@ -100,6 +119,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
         mEditar.add(jMenuItem3);
+
+        jMenuItem9.setText("Agenda");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        mEditar.add(jMenuItem9);
 
         jMenuBar1.add(mEditar);
 
@@ -173,6 +200,24 @@ public class Home extends javax.swing.JFrame {
         Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        new AddAgenda().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        new DeleteAgenda().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        new EditAgenda().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em visualizar agenda
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,6 +261,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu jRemover;
     private javax.swing.JMenu mCadastro;
