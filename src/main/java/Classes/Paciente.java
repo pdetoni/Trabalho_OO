@@ -30,6 +30,6 @@ public class Paciente extends Perfil {
     //Ajuste no toString para exibir o ID também, além do nome (ultil classe Delete)
     @Override
     public String toString() {
-        return "ID: " + id + ", Nome: " + nome;
+        return "ID: " + id + ", Nome: " + nome + ", Idade: " + idade;
     }
 }

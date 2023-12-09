@@ -92,11 +92,10 @@ public class Persistencia {
     }
     public void escreverArquivoAgenda(String arquivoAgenda, List<Agenda> agendas) {
         try (FileWriter writer = new FileWriter(arquivoAgenda)) {
+            System.out.println("Writing " + agendas.size() + " agendas to " + arquivoAgenda); // Proposito de debug
             gson.toJson(agendas, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 }

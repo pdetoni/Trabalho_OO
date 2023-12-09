@@ -11,6 +11,8 @@ import Classes.DAO.PacienteDAO;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class AddAgenda extends JFrame {
@@ -94,6 +96,15 @@ public class AddAgenda extends JFrame {
 
         if (paciente == null || consulta == null || data.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Todos os campos devem ser preenchidos!");
+            return;
+        }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        sdf.setLenient(false);
+        try {
+            sdf.parse(data);
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(this, "A data deve estar no formato dd/MM/yyyy HH:mm!");
             return;
         }
 

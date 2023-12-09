@@ -7,16 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AgendaDAO {
-    public void insert(Agenda agenda){
-          
-        if(agenda.getId() == 0){
-            agenda.setId(proximoId());
-            Banco.Agenda.add(agenda);
+
+    // Construtor para ler o arquivo e carregar a lista de Agendas
+    public AgendaDAO() {
+        Persistencia persistencia = new Persistencia();
+        List<Agenda> agendas = persistencia.lerArquivoAgenda("src/main/java/Classes/Data/agendas.json");
+        if (agendas == null) {
+            agendas = new ArrayList<>();
         }
-        
-        
+        Banco.Agenda = agendas;
     }
 
+    public void insert(Agenda agenda){
+        if(agenda.getId() == 0){
+            agenda.setId(proximoId());
+        }
+        Banco.Agenda.add(agenda);
+        Persistencia persistencia = new Persistencia();
+        persistencia.escreverArquivoAgenda("src/main/java/Classes/Data/agendas.json", Banco.Agenda);
+    }
     public void update(Agenda agenda) {
         for (int i = 0; i < Banco.Agenda.size(); i++) {
             if (Banco.Agenda.get(i).getId() == agenda.getId()) {

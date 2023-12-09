@@ -3,36 +3,88 @@
     "id": 1,
     "data": "22/12/2023 14:30",
     "paciente": {
+      "cep": "51420-487",
+      "endereco": "Rua Patos, 32",
       "id": 1,
       "nome": "Leo",
       "cpf": "335.676.769-58",
       "sexo": "M",
       "idade": 16,
-      "email": "leo@gmail.com",
-      "cep": "51420-487",
-      "endereco": "Rua Patos, 32"
+      "email": "leo@gmail.com"
     },
     "consulta": {
       "id": 1,
-      "tipo": "Dentista"
+      "tipo": "Dentista",
+      "medicoResponsavel": {
+        "nome": "Arnaldo Cesar",
+        "cpf": "123.456.789-01"
+      }
     }
   },
   {
     "id": 2,
     "data": "18/12/2023 09:30",
     "paciente": {
+      "cep": "13430-490",
+      "endereco": "Rua Garças, 45",
       "id": 2,
       "nome": "Marta",
       "cpf": "763.876.087-88",
       "sexo": "F",
       "idade": 22,
-      "email": "marta@gmail.com",
-      "cep": "13430-490",
-      "endereco": "Rua Garças, 45"
+      "email": "marta@gmail.com"
     },
     "consulta": {
       "id": 2,
-      "tipo": "Oftalmologista"
+      "tipo": "Oftalmologista",
+      "medicoResponsavel": {
+        "nome": "Galvao Bueno",
+        "cpf": "987.654.321-09"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "data": "12/10/2023 14:40",
+    "paciente": {
+      "cep": "12345-987",
+      "endereco": "Rua das Ostras, 120",
+      "id": 8,
+      "nome": "Rodolfão",
+      "cpf": "123.456.789-10",
+      "sexo": "M",
+      "idade": 50,
+      "email": "rodlf@gmail.com"
+    },
+    "consulta": {
+      "id": 2,
+      "tipo": "Oftalmologista",
+      "medicoResponsavel": {
+        "nome": "Galvao Bueno",
+        "cpf": "987.654.321-09"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "data": "10/10/2023 15:00",
+    "paciente": {
+      "cep": "00000-000",
+      "endereco": "Rua do Teste, 00",
+      "id": 3,
+      "nome": "Teste",
+      "cpf": "000.000.000-70",
+      "sexo": "M",
+      "idade": 40,
+      "email": "email@teste.com"
+    },
+    "consulta": {
+      "id": 1,
+      "tipo": "Dentista",
+      "medicoResponsavel": {
+        "nome": "Arnaldo Cesar",
+        "cpf": "123.456.789-01"
+      }
     }
   }
 ]
