@@ -93,7 +93,7 @@ public class Home extends javax.swing.JFrame {
 
         mEditar.setText("Editar");
 
-        jMenuItem3.setText("Agenda");
+        jMenuItem3.setText("Paciente");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -138,7 +138,8 @@ public class Home extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        this.controller.irPRegistros();
+        new EditPaciente().setVisible(true);
+        Home.this.dispose(); // Fecha a tela home ao clicar em editar paciente
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
