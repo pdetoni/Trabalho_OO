@@ -1,8 +1,10 @@
 package Telas.Root;
 
 import Classes.Consulta;
+import Classes.DAO.Banco;
 import Classes.DAO.ConsultaDAO;
 import Classes.Medico;
+import Classes.Data.Persistencia;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,7 +44,7 @@ public class AddConsulta extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weightx = 1;
         gbc.weighty = 1;
-        add(new JLabel("Tipo:"), gbc);
+        add(new JLabel("Tipo (Dentista, Oftalmologista...):"), gbc);
         gbc.gridy++;
         add(tipoField, gbc);
 
@@ -85,10 +87,22 @@ public class AddConsulta extends JFrame {
             return;
         }
 
+        if (!medicoCpf.matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$")) {
+            JOptionPane.showMessageDialog(this, "O CPF do médico deve estar no formato 000.000.000-00!");
+            return;
+        }
+        if (consultaDAO.cpfMedicoExiste(medicoCpf)) {
+            JOptionPane.showMessageDialog(this, "O CPF do médico já está em uso!");
+            return;
+        }
+
         Medico medico = new Medico(medicoNome, medicoCpf);
         int id = consultaDAO.getUltimoId();
         Consulta consulta = new Consulta(id, tipo, medico);
         consultaDAO.insert(consulta);
+
+        Persistencia persistencia = new Persistencia();
+        persistencia.escreverArquivoConsulta("src/main/java/Classes/Data/consultas.json", Banco.Consulta);
 
         JOptionPane.showMessageDialog(this, "Consulta adicionada com sucesso!");
         backButtonActionPerformed();

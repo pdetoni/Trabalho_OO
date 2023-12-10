@@ -82,6 +82,16 @@ public class PacienteDAO extends GenericDAO<Paciente>{
 
         return maiorId + 1;
     }
+
+    public boolean cpfExiste(String cpf) {
+        for (Paciente paciente : Banco.Paciente) {
+            if (paciente.getCpf().equals(cpf)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Paciente getPaciente(int id) {
         for (Paciente paciente : Banco.Paciente) {
             if (paciente.getId() == id) {

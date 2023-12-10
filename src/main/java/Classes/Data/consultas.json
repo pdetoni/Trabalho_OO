@@ -3,7 +3,6 @@
     "id": 1,
     "tipo": "Dentista",
     "medicoResponsavel": {
-      "class": "Medico",
       "nome": "Arnaldo Cesar",
       "cpf": "123.456.789-01"
     }
@@ -12,9 +11,16 @@
     "id": 2,
     "tipo": "Oftalmologista",
     "medicoResponsavel": {
-      "class": "Medico",
       "nome": "Galvao Bueno",
       "cpf": "987.654.321-09"
+    }
+  },
+  {
+    "id": 3,
+    "tipo": "Oculista",
+    "medicoResponsavel": {
+      "nome": "Fernando",
+      "cpf": "987.654.321-08"
     }
   }
 ]

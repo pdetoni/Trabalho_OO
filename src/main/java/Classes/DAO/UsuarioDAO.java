@@ -12,13 +12,12 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
         Banco.inicia();
     }
     public void insert(Usuario usuario){
-        //Banco.usuario.add(usuario);
         if(usuario.getId() == 0){
             usuario.setId(proximoId());
-            Banco.usuario.add(usuario);
         }
+        Banco.usuario.add(usuario);
     }
-    
+
     
     public boolean update(Usuario usuario){
         
@@ -91,5 +90,14 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
             maiorId = Math.max(maiorId, usuario.getId());
         }
         return maiorId + 1;
+    }
+
+    public boolean cpfExiste(String cpf) {
+        for (Usuario usuario : Banco.usuario) {
+            if (usuario.getCpf().equals(cpf)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

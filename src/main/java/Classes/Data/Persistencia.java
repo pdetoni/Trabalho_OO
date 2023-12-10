@@ -98,4 +98,26 @@ public class Persistencia {
             e.printStackTrace();
         }
     }
+
+    public void escreverArquivoConsulta(String filePath, List<Consulta> consultas) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(consultas);
+
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void escreverArquivoUsuario(String filePath, List<Usuario> usuarios) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(usuarios);
+
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

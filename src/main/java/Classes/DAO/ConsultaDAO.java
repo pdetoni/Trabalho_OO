@@ -60,6 +60,15 @@ public class ConsultaDAO extends GenericDAO<Consulta>{
         return consulta.getId() ==  consultaC.getId();
     }
 
+    public boolean cpfMedicoExiste(String cpf) {
+        for (Consulta consulta : Banco.Consulta) {
+            if (consulta.getMedicoResponsavel().getCpf().equals(cpf)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public int getUltimoId() {
         int maiorId = 0;

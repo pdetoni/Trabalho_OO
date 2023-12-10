@@ -1,6 +1,8 @@
 package Telas.Root;
 
+import Classes.DAO.Banco;
 import Classes.DAO.UsuarioDAO;
+import Classes.Data.Persistencia;
 import Classes.Usuario;
 
 import javax.swing.*;
@@ -105,7 +107,7 @@ public class AddUsuario extends JFrame {
     private void addButtonActionPerformed() {
         String nome = nomeField.getText();
         String cpf = cpfField.getText();
-        String sexo = sexoField.getText();
+        String sexo = sexoField.getText().trim().toUpperCase();
         String idadeStr = idadeField.getText();
         String email = emailField.getText();
         String senha = senhaField.getText();
@@ -121,9 +123,33 @@ public class AddUsuario extends JFrame {
             return;
         }
 
+        if (!cpf.matches("^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$")) {
+            JOptionPane.showMessageDialog(this, "O CPF deve estar no formato 000.000.000-00!");
+            return;
+        }
+
+        if (usuarioDAO.cpfExiste(cpf)) {
+            JOptionPane.showMessageDialog(this, "O CPF já está em uso!");
+            return;
+        }
+
+        if (!sexo.equals("M") && !sexo.equals("F")) {
+            JOptionPane.showMessageDialog(this, "O sexo deve ser 'M' ou 'F'!");
+            return;
+        }
+
+        if (!email.contains("@")) {
+            JOptionPane.showMessageDialog(this, "O email deve ser um formato válido!");
+            return;
+        }
+
         int idade;
         try {
             idade = Integer.parseInt(idadeStr);
+            if (idade < 0 || idade > 150) {
+                JOptionPane.showMessageDialog(this, "A idade deve ser um número entre 0 e 150!");
+                return;
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "A idade deve ser um número!");
             return;
@@ -133,8 +159,12 @@ public class AddUsuario extends JFrame {
         Usuario usuario = new Usuario(id, nome, cpf, sexo.charAt(0), idade, email, senha, cargo);
         usuarioDAO.insert(usuario);
 
+        Persistencia persistencia = new Persistencia();
+        persistencia.escreverArquivoUsuario("src/main/java/Classes/Data/usuarios.json", Banco.usuario);
+
         JOptionPane.showMessageDialog(this, "Usuário adicionado com sucesso!");
         backButtonActionPerformed();
+
     }
 
     private void backButtonActionPerformed() {

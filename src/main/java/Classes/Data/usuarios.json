@@ -1,32 +1,42 @@
 [
   {
+    "senha": "toor",
+    "cargo": "Administrador",
     "id": 0,
     "nome": "root",
     "cpf": "000.000.000-00",
     "sexo": "M",
     "idade": 0,
-    "email": "root@sysadmin.com",
-    "senha": "toor",
-    "cargo": "Administrador"
+    "email": "root@sysadmin.com"
   },
   {
+    "senha": "senha",
+    "cargo": "Dentista",
     "id": 1,
     "nome": "Gleiph",
     "cpf": "123.456.789-10",
     "sexo": "M",
     "idade": 36,
-    "email": "gleiph@gmail.com",
-    "senha": "senha",
-    "cargo": "Dentista"
+    "email": "gleiph@gmail.com"
   },
   {
+    "senha": "senha",
+    "cargo": "Secretária",
     "id": 2,
     "nome": "Lúcia",
     "cpf": "165.786.909-50",
     "sexo": "F",
     "idade": 22,
-    "email": "lucia@gmail.com",
-    "senha": "senha",
-    "cargo": "Secretária"
+    "email": "lucia@gmail.com"
+  },
+  {
+    "senha": "123456",
+    "cargo": "Ubuntu Installer",
+    "id": 3,
+    "nome": "Peter Jordan",
+    "cpf": "000.000.000-01",
+    "sexo": "M",
+    "idade": 29,
+    "email": "peter@gmail.com"
   }
 ]
