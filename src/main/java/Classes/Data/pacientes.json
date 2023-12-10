@@ -53,7 +53,7 @@
     "cep": "12345-987",
     "endereco": "Rua das Ostras, 120",
     "id": 7,
-    "nome": "Rodolfin",
+    "nome": "Rodi",
     "cpf": "123.456.789-10",
     "sexo": "M",
     "idade": 50,
@@ -63,20 +63,10 @@
     "cep": "12345-987",
     "endereco": "Rua das Ostras, 120",
     "id": 8,
-    "nome": "Rodolfão",
-    "cpf": "123.456.789-10",
-    "sexo": "M",
-    "idade": 50,
-    "email": "rodlf@gmail.com"
-  },
-  {
-    "cep": "54321-001",
-    "endereco": "Rua dos Cantos, 80",
-    "id": 9,
-    "nome": "Carlos",
+    "nome": "Dolfin",
     "cpf": "123.456.789-11",
     "sexo": "M",
     "idade": 50,
-    "email": "carlos@gmail.com"
+    "email": "rodlf@gmail.com"
   }
 ]
