@@ -1,3 +1,9 @@
+/*
+Nomes e matrículas:
+Felipe Lazzarini Cunha - 201876040
+Pedro Detoni Pereira - 202176031
+ */
+
 //Classe a ser usado como referencia na construção da interface mais adiante
 package Telas;
 

@@ -1,3 +1,8 @@
+/*
+Nomes e matrículas:
+Felipe Lazzarini Cunha - 201876040
+Pedro Detoni Pereira - 202176031
+ */
 package Telas;
 
 import Classes.Data.Persistencia;
@@ -165,6 +170,7 @@ public class AddPaciente extends JFrame {
             JOptionPane.showMessageDialog(this, "O CPF já está em uso!");
             return;
         }
+
         if (!cep.matches("^\\d{5}-\\d{3}$")) {//Uso de expessão regular para validar o CEP inserido esta no formato correto
             JOptionPane.showMessageDialog(this, "O CEP deve estar no formato 00000-000!");
             return;
