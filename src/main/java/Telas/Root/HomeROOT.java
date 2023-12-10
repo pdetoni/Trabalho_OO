@@ -28,6 +28,7 @@ public class HomeROOT extends JFrame {
         this.setLocationRelativeTo(null);
         this.setPreferredSize(new Dimension(400, 400));
         this.pack();
+        this.getContentPane().setBackground(Color.DARK_GRAY);//Pequena estilização para diferenciar as homes visualmente
     }
 
     private void initComponents() {
