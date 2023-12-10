@@ -3,6 +3,8 @@ package Telas;
 import Classes.DAO.UsuarioDAO;
 import Classes.Data.Persistencia;
 import Classes.Usuario;
+import Telas.Root.HomeROOT;
+
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +71,7 @@ public class VisualizarUsuarios extends javax.swing.JFrame {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
         this.dispose();
-        new Home().setVisible(true);
+        new HomeROOT().setVisible(true);
     }
 
     private void loadUserTable() {
