@@ -92,9 +92,9 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
         return maiorId + 1;
     }
 
-    public boolean cpfExiste(String cpf) {
+    public boolean cpfExiste(String cpf, int idIgnorado) {
         for (Usuario usuario : Banco.usuario) {
-            if (usuario.getCpf().equals(cpf)) {
+            if (usuario.getCpf().equals(cpf) && usuario.getId() != idIgnorado) {
                 return true;
             }
         }

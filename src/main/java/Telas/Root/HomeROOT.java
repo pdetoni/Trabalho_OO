@@ -73,22 +73,22 @@ public class HomeROOT extends JFrame {
     }
 
     private void removerConsultaItemActionPerformed() {
-//        new DeleteConsulta().setVisible(true);
+        new DeleteConsulta().setVisible(true);
         this.dispose();
     }
 
     private void removerUsuarioItemActionPerformed() {
-//        new DeleteUsuario().setVisible(true);
+        new DeleteUsuario().setVisible(true);
         this.dispose();
     }
 
     private void editarConsultaItemActionPerformed() {
-//        new EditConsulta().setVisible(true);
+       new EditConsulta().setVisible(true);
         this.dispose();
     }
 
     private void editarUsuarioItemActionPerformed() {
-//        new EditUsuario().setVisible(true);
+        new EditUsuario().setVisible(true);
         this.dispose();
     }
 

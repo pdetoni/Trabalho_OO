@@ -104,10 +104,12 @@ public class AddConsulta extends JFrame {
             return;
         }
 
-        if (consultaDAO.cpfMedicoExiste(medicoCpf)) {
+        //Verifica se o CPF do médico já está em uso e se não é o CPF do médico atual para edições
+        if (consultaDAO.cpfMedicoExiste(medicoCpf, consulta != null ? consulta.getId() : -1)) {
             JOptionPane.showMessageDialog(this, "O CPF do médico já está em uso!");
             return;
         }
+
 
         Medico medico = new Medico(medicoNome, medicoCpf);
         if (consulta != null) {

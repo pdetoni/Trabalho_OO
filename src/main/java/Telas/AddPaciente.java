@@ -159,7 +159,9 @@ public class AddPaciente extends JFrame {
             JOptionPane.showMessageDialog(this, "O CPF deve estar no formato 000.000.000-00!");
             return;
         }
-        if (pacienteDAO.cpfExiste(cpf)) {
+
+        // Verifica se o CPF já está em uso e se não é o CPF do paciente atual
+        if (pacienteDAO.cpfExiste(cpf, paciente != null ? paciente.getId() : -1)) {
             JOptionPane.showMessageDialog(this, "O CPF já está em uso!");
             return;
         }

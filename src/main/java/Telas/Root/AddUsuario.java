@@ -142,7 +142,8 @@ public class AddUsuario extends JFrame {
             return;
         }
 
-        if (usuarioDAO.cpfExiste(cpf)) {
+        // Verifica se o CPF já está em uso e se não é o CPF do usuário atual
+        if (usuarioDAO.cpfExiste(cpf, usuario != null ? usuario.getId() : -1)) {
             JOptionPane.showMessageDialog(this, "O CPF já está em uso!");
             return;
         }
