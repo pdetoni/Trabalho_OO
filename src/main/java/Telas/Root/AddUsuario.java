@@ -21,12 +21,26 @@ public class AddUsuario extends JFrame {
     private JButton backButton;
     private UsuarioDAO usuarioDAO;
 
+    private Usuario usuario = null;
+
     public AddUsuario() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setPreferredSize(new Dimension(400, 400));
         this.pack();
         usuarioDAO = new UsuarioDAO();
+    }
+    //Construtor para uso de edição de usuário existente em EditUsuario
+    public AddUsuario(Usuario usuario) {
+        this();
+        this.usuario = usuario;
+        nomeField.setText(usuario.getNome());
+        cpfField.setText(usuario.getCpf());
+        sexoField.setText(String.valueOf(usuario.getSexo()));
+        idadeField.setText(String.valueOf(usuario.getIdade()));
+        emailField.setText(usuario.getEmail());
+        senhaField.setText(usuario.getSenha());
+        cargoField.setText(usuario.getCargo());
     }
 
     private void initComponents() {
@@ -155,16 +169,26 @@ public class AddUsuario extends JFrame {
             return;
         }
 
-        int id = usuarioDAO.getUltimoId();
-        Usuario usuario = new Usuario(id, nome, cpf, sexo.charAt(0), idade, email, senha, cargo);
-        usuarioDAO.insert(usuario);
+        if (usuario != null) {
+            usuario.setNome(nome);
+            usuario.setCpf(cpf);
+            usuario.setSexo(sexo.charAt(0));
+            usuario.setIdade(idade);
+            usuario.setEmail(email);
+            usuario.setSenha(senha);
+            usuario.setCargo(cargo);
+            usuarioDAO.update(usuario);
+        } else {
+            int id = usuarioDAO.getUltimoId();
+            Usuario newUsuario = new Usuario(id, nome, cpf, sexo.charAt(0), idade, email, senha, cargo);
+            usuarioDAO.insert(newUsuario);
+        }
 
         Persistencia persistencia = new Persistencia();
         persistencia.escreverArquivoUsuario("src/main/java/Classes/Data/usuarios.json", Banco.usuario);
 
-        JOptionPane.showMessageDialog(this, "Usuário adicionado com sucesso!");
+        JOptionPane.showMessageDialog(this, "Usuário atualizado com sucesso!");
         backButtonActionPerformed();
-
     }
 
     private void backButtonActionPerformed() {

@@ -18,6 +18,8 @@ public class AddConsulta extends JFrame {
     private JButton backButton;
     private ConsultaDAO consultaDAO;
 
+    private Consulta consulta = null;
+
     public AddConsulta() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -25,6 +27,16 @@ public class AddConsulta extends JFrame {
         this.pack();
         consultaDAO = new ConsultaDAO();
     }
+
+    //Construtor para uso de edição de consulta existente em EditConsulta
+    public AddConsulta(Consulta consulta) {
+        this();
+        this.consulta = consulta;
+        tipoField.setText(consulta.getTipo());
+        medicoNomeField.setText(consulta.getMedicoResponsavel().getNome());
+        medicoCpfField.setText(consulta.getMedicoResponsavel().getCpf());
+    }
+
 
     private void initComponents() {
 
@@ -91,20 +103,27 @@ public class AddConsulta extends JFrame {
             JOptionPane.showMessageDialog(this, "O CPF do médico deve estar no formato 000.000.000-00!");
             return;
         }
+
         if (consultaDAO.cpfMedicoExiste(medicoCpf)) {
             JOptionPane.showMessageDialog(this, "O CPF do médico já está em uso!");
             return;
         }
 
         Medico medico = new Medico(medicoNome, medicoCpf);
-        int id = consultaDAO.getUltimoId();
-        Consulta consulta = new Consulta(id, tipo, medico);
-        consultaDAO.insert(consulta);
+        if (consulta != null) {
+            consulta.setTipo(tipo);
+            consulta.setMedicoResponsavel(medico);
+            consultaDAO.update(consulta);
+        } else {
+            int id = consultaDAO.getUltimoId();
+            Consulta newConsulta = new Consulta(id, tipo, medico);
+            consultaDAO.insert(newConsulta);
+        }
 
         Persistencia persistencia = new Persistencia();
         persistencia.escreverArquivoConsulta("src/main/java/Classes/Data/consultas.json", Banco.Consulta);
 
-        JOptionPane.showMessageDialog(this, "Consulta adicionada com sucesso!");
+        JOptionPane.showMessageDialog(this, "Consulta atualizada com sucesso!");
         backButtonActionPerformed();
     }
 
