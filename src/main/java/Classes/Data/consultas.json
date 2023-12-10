@@ -14,13 +14,5 @@
       "nome": "Galvao Bueno",
       "cpf": "987.654.321-09"
     }
-  },
-  {
-    "id": 3,
-    "tipo": "Oculista",
-    "medicoResponsavel": {
-      "nome": "Fernando",
-      "cpf": "987.654.321-08"
-    }
   }
 ]

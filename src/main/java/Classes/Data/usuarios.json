@@ -28,15 +28,5 @@
     "sexo": "F",
     "idade": 22,
     "email": "lucia@gmail.com"
-  },
-  {
-    "senha": "123456",
-    "cargo": "Ubuntu Installer",
-    "id": 3,
-    "nome": "Peter Jordan",
-    "cpf": "000.000.000-01",
-    "sexo": "M",
-    "idade": 29,
-    "email": "peter@gmail.com"
   }
 ]

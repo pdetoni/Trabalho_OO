@@ -1,11 +1,7 @@
 package Classes;
 
 public class Usuario extends Perfil {
-    
-    /*public Usuario(int id, String nome, String cpf, char sexo, int idade, String email) {
-        super(id, nome, cpf, sexo, idade, email);
-    }*/
-    
+
     private String senha;
     private String cargo;
 
@@ -41,7 +37,11 @@ public class Usuario extends Perfil {
 
     @Override
     public String toString() {
-        return super.toString() + ", senha=" + senha + ", cargo=" + cargo + '}';
+        return "ID: " + getId() +
+                ", Nome: " + getNome() +
+                ", CPF: " + getCpf() +
+                ", Idade: " + getIdade() +
+                ", " + getCargo();
     }
 
     
