@@ -1,3 +1,9 @@
+/*
+Nomes e matrículas:
+Felipe Lazzarini Cunha - 201876040
+Pedro Detoni Pereira - 202176031
+ */
+
 //Classe que sera usado como base mais para frente
 package Telas;
 

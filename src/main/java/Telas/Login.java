@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Nomes e matrículas:
+Felipe Lazzarini Cunha - 201876040
+Pedro Detoni Pereira - 202176031
  */
 package Telas;
 import Classes.DAO.Banco;
@@ -10,10 +11,6 @@ import Telas.Root.HomeROOT;
 
 import javax.swing.*;
 
-/**
- *
- * @author pdper
- */
 public class Login extends javax.swing.JFrame {
 
     private final LoginC controller;
